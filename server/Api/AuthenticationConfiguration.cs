@@ -5,8 +5,6 @@ using Service;
 using Service.Security;
 using Service.Security.Authorization;
 
-
-
 namespace Api;
 
 public static class AuthenticationConfiguration

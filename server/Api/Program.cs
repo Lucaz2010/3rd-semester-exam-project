@@ -15,7 +15,12 @@ var options = new DataOptions<AppDbConnection>(
 builder.Services.AddScoped<AppDbConnection>(_ =>
     new AppDbConnection(options));
     
-builder.Services.AddScoped<UserService>();
+
+builder.Services.ConfigureDomainServices(
+    builder.Configuration);
+
+
+
 builder.Services.AddControllers();
 builder.Services.AddOpenApiDocument();
 builder.Services.AddCors();
@@ -27,6 +32,8 @@ var app = builder.Build();
 
 app.UseExceptionHandler();
 app.UseCors(config => config.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().SetIsOriginAllowed(_=>true));
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.UseOpenApi();
 app.UseSwaggerUi();
