@@ -2,7 +2,7 @@
 
 namespace Service.DTOs;
 
-public class LoginResquestDto
+public class LoginRequestDto
 {
     [Required]
     public string Username { get; set; }

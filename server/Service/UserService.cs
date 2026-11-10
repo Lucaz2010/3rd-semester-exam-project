@@ -17,4 +17,10 @@ public class UserService (AppDbConnection db)
     {
         throw new NotImplementedException();
     }
+
+
+    public LoginResponseDto Login(LoginRequestDto dto)
+    {
+        throw new NotImplementedException();
+    }
 }
