@@ -1,16 +1,20 @@
 namespace Service;
 
-using LinqToDB;
 using Infrastructure.Data;
 using Infrastructure.Entities;
-using Service.DTOs;
-using LinqToDB.Async;
+using DTOs;
 
-//test commit
+
 public class UserService (AppDbConnection db)
 {
+    
     public List<User> GetUsers()
     {
-        return db.Users.ToList();
+        throw new NotImplementedException();
+    }
+
+    public UserDto CreateUser(CreateUserRequestDto dto, string currentUserId)
+    {
+        throw new NotImplementedException();
     }
 }
