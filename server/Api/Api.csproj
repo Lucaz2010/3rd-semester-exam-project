@@ -2,8 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj" />
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\Security\Security.csproj" />
   </ItemGroup>
 
   <ItemGroup>
