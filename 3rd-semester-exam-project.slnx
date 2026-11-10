@@ -10,4 +10,5 @@
     <Project Path="server/Tests/IntegrationTests/IntegrationTests.csproj" />
     <Project Path="server/Tests/UnitTests/UnitTests.csproj" />
   </Folder>
+  <Project Path="client-tobias/client-tobias.csproj" />
 </Solution>

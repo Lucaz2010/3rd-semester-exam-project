@@ -6,5 +6,6 @@ using Infrastructure.Entities;
 
 public class AppDataConnection(DataOptions options) : DataConnection(options)
 {
-    public ITable<User> Products => this.GetTable<User>();
+    public ITable<User> Users() => this.GetTable<User>();
+    public ITable<Admin> Admins() => this.GetTable<Admin>();
 }
