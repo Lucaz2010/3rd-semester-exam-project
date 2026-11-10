@@ -8,7 +8,7 @@ using DTOs;
 public class UserService (AppDbConnection db)
 {
     
-    public List<User> GetUsers()
+    public List<UserDto> GetUsers()
     {
         throw new NotImplementedException();
     }
