@@ -7,12 +7,12 @@ using Service.DTOs;
 using LinqToDB.Async;
 
 //test commit
-public class UserService(AppDataConnection db)
+public class UserService (AppDbConnection db)
 {
     private readonly AppDataConnection _db = db;
     
-    public async Task<List<User>> GetAllUsersAsync()
+    public List<User> GetUsers()
     {
-        return await _db.Products.AsAsyncEnumerable().ToListAsync();
+        return db.Users.ToList();
     }
 }
