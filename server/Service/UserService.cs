@@ -1,7 +1,7 @@
-using Security.Services.Security;
 using Service.Security.Authorization;
 using Infrastructure.Data;
 using Service.DTOs;
+using Service.Security;
 
 namespace Service;
 

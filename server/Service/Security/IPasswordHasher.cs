@@ -1,4 +1,4 @@
-namespace Security.Services.Security;
+namespace Service.Security;
 
 public interface IPasswordHasher
 {
