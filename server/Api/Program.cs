@@ -21,6 +21,7 @@ builder.Services.AddOpenApiDocument();
 builder.Services.AddCors();
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<MyExceptionHandler>();
+builder.Services.AddScoped<HolidayRequestService>();
 
 var app = builder.Build();
 
