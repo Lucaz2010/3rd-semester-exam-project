@@ -2,6 +2,7 @@ import { APITester } from "./APITester";
 import {useState} from "react";
 import {AdminPage} from "@/AdminPage.tsx";
 import {BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate} from "react-router-dom";
+import {HolidayApproval} from "@/HolidayApproval.tsx";
 
 
 
@@ -51,14 +52,10 @@ function AppLayout() {
                 
                 
                 
-                <Route path="/adminpage" element={
-                            <AdminPage />
-                    }
-                />
+                <Route path="/adminpage" element={<AdminPage />}/>
+                <Route path="/holidayapproval" element={<HolidayApproval />}/>
 
-                <Route
-                    path="*"
-                    element={<Navigate to="/login" replace />}
+                <Route path="*" element={<Navigate to="/login" replace />}
                 />
             </Routes>
         </>
