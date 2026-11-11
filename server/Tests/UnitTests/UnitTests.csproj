@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Service\Service.csproj" />
-    <ProjectReference Include="..\..\Security\Security.csproj" />
   </ItemGroup>
 
 </Project>
