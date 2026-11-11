@@ -1,16 +1,16 @@
 import {useEffect, useState} from "react";
 import { api } from "@/api/Api.ts"
-import type {Admin, User} from "@/api/Api.ts";
+import type {HolidayRequest} from "@/api/Api.ts";
 import "./index.css";
 
 
 export function HolidayApproval() {
-    const [user, setUsers] = useState<User[]>([])
+    const [holidayRequests, setHolidayRequests] = useState<HolidayRequest[]>([])
 
     useEffect(() => {
-        api.getAllUsers.userQueriesGetAllUsers()
-            .then((r: User[]) => {
-                setUsers(r);
+        api.getHolidayRequests.userQueriesGetHolidayRequests()
+            .then((r: HolidayRequest[]) => {
+                setHolidayRequests(r);
             })
 
     }, []);
@@ -27,7 +27,7 @@ export function HolidayApproval() {
                 <table className="Table">
                     <thead>
                     <th className="UsersTableDesignTh">
-                        Username
+                        Employee
                     </th>
                     <th className="UsersTableDesignTh">
                         Holiday period requested
@@ -45,14 +45,14 @@ export function HolidayApproval() {
 
                     </thead>
 
-                    {user.map((u) => (
+                    {holidayRequests.map((h) => (
 
                         <tbody>
                         <tr>
-                            <td className="UsersTableDesignTh">Employee</td>
-                            <td className="UsersTableDesignTh">Holiday days requested</td>
-                            <td className="UsersTableDesignTh">Total days</td>
-                            <td className="UsersTableDesignTh">Requested on</td>
+                            <td className="UsersTableDesignTh">{h.user?.name}</td>
+                            <td className="UsersTableDesignTh">{h.startDate} - {h.endDate}</td>
+                            <td className="UsersTableDesignTh">{h.requestedDays}</td>
+                            <td className="UsersTableDesignTh">{h.startDate}</td>
 
 
                             <td className="UsersTableDesignTh">

@@ -43,4 +43,18 @@ public class UserQueries(AppDataConnection db) : ControllerBase
         user.PasswordHash = "";
         db.Update(user);
     }
+
+    [HttpPost(nameof(CreateHolidayRequest))]
+    public void CreateHolidayRequest(HolidayRequest holidayRequest)
+    {
+        db.Insert(holidayRequest);
+    }
+    
+    
+    
+    [HttpGet(nameof(GetHolidayRequests))]
+    public List<HolidayRequest> GetHolidayRequests()
+    {
+        return db.HolidayRequests().LoadWith(h => h.User).ToList();
+    }
 }

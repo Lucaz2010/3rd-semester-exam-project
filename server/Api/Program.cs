@@ -41,6 +41,8 @@ using var scope = app.Services.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<AppDataConnection>();
 db.CreateTable<User>(tableOptions: TableOptions.CreateIfNotExists);
 db.CreateTable<Admin>(tableOptions: TableOptions.CreateIfNotExists);
+db.CreateTable<HolidayRequest>(tableOptions: TableOptions.CreateIfNotExists);
+
 
 
 var users = db.Users().ToList();
@@ -57,6 +59,13 @@ foreach (var a in admins)
     db.Delete(a);
 }
     
+var holidayrequests = db.HolidayRequests().ToList();
+foreach (var h in holidayrequests)
+{
+    db.Delete(h);
+}
+
+
 if (!db.Users().Any())
 {
     db.Insert(new User()
@@ -98,6 +107,27 @@ if (!db.Admins().Any())
         PasswordHash = "",
         Email = "Admin@gmail.com"
 
+    });
+}
+
+
+var james = db.Users()
+    .FirstOrDefault(u => u.Name == "James");
+
+if (!db.HolidayRequests().Any())
+{
+    db.Insert(new HolidayRequest()
+    {
+        
+        Id = Guid.NewGuid().ToString(),
+        UserId = james.Id,
+        StartDate = new DateTime(2026, 11, 11),
+        EndDate = new DateTime(2026, 11, 14),
+        HolidayAccount = "a",
+        RequestedDays = 3,
+        RequestedHours = 72,
+        Status = "Pending",
+        CreatedAtUtc = new DateTime(2026, 9, 13)
     });
 }
 

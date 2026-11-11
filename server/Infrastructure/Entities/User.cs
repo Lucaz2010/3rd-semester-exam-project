@@ -17,4 +17,6 @@ public class User
     
     [Column(Name = "PasswordHash"), NotNull]
     public string PasswordHash { get; set; }
+    
+    
 }

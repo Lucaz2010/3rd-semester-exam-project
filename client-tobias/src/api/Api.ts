@@ -24,6 +24,24 @@ export interface User {
   passwordHash?: string;
 }
 
+export interface HolidayRequest {
+  id?: string;
+  userId?: string;
+  /** @format date-time */
+  startDate?: string;
+  /** @format date-time */
+  endDate?: string;
+  holidayAccount?: string;
+  /** @format int32 */
+  requestedDays?: number;
+  /** @format decimal */
+  requestedHours?: number;
+  status?: string;
+  /** @format date-time */
+  createdAtUtc?: string;
+  user?: User;
+}
+
 export interface AdminQueriesPostAdminParams {
   Id?: string;
   Name?: string;
@@ -56,6 +74,27 @@ export interface UserQueriesEditUserParams {
   userId?: string;
   newUsername?: string;
   newPassword?: string;
+}
+
+export interface UserQueriesCreateHolidayRequestParams {
+  Id?: string;
+  UserId?: string;
+  /** @format date-time */
+  StartDate?: string;
+  /** @format date-time */
+  EndDate?: string;
+  HolidayAccount?: string;
+  /** @format int32 */
+  RequestedDays?: number;
+  /** @format decimal */
+  RequestedHours?: number;
+  Status?: string;
+  /** @format date-time */
+  CreatedAtUtc?: string;
+  "User.Id"?: string;
+  "User.Name"?: string;
+  "User.Email"?: string;
+  "User.PasswordHash"?: string;
 }
 
 export type QueryParamsType = Record<string | number, any>;
@@ -467,5 +506,42 @@ export class Api<
         ...params,
       }),
   };
+  createHolidayRequest = {
+    /**
+     * No description
+     *
+     * @tags UserQueries
+     * @name UserQueriesCreateHolidayRequest
+     * @request POST:/CreateHolidayRequest
+     */
+    userQueriesCreateHolidayRequest: (
+      query: UserQueriesCreateHolidayRequestParams = {},
+      params: RequestParams = {},
+    ) =>
+      this.request<void, any>({
+        path: `/CreateHolidayRequest`,
+        method: "POST",
+        query: query,
+        ...params,
+      }),
+  };
+  getHolidayRequests = {
+    /**
+     * No description
+     *
+     * @tags UserQueries
+     * @name UserQueriesGetHolidayRequests
+     * @request GET:/GetHolidayRequests
+     */
+    userQueriesGetHolidayRequests: (params: RequestParams = {}) =>
+      this.request<HolidayRequest[], any>({
+        path: `/GetHolidayRequests`,
+        method: "GET",
+        format: "json",
+        ...params,
+      }),
+  };
 }
-export const api = new Api({});
+
+
+export const api = new Api();

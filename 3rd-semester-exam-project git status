@@ -1,0 +1,18 @@
+*   [33m7392c53[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mtobias-branch[m[33m)[m Merge remote-tracking branch 'origin/main' into tobias-branch
+[31m|[m[32m\[m  
+[31m|[m *   [33ma8673ef[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Merge pull request #10 from Lucaz2010/feature/holiday-requests
+[31m|[m [33m|[m[34m\[m  
+[31m|[m * [34m\[m   [33m3429060[m Merge pull request #9 from Lucaz2010/feature/security-authentication
+[31m|[m [35m|[m[36m\[m [34m\[m  
+[31m|[m [35m|[m * [34m|[m [33m5c1c7c6[m[33m ([m[1;31morigin/feature/security-authentication[m[33m)[m Added missing builder.services | appsettings.json for the JWT config
+[31m|[m [35m|[m * [34m|[m [33m9dbaf09[m AuthenticationConfiguration for claims
+[31m|[m [35m|[m * [34m|[m [33m1323a1e[m JWTAutorization Service
+[31m|[m [35m|[m[35m/[m [34m/[m  
+* [35m|[m [34m|[m   [33mff0af75[m Merge remote-tracking branch 'origin/feature/holiday-requests' into tobias-branch
+[1;31m|[m[34m\[m [35m\[m [34m\[m  
+[1;31m|[m [34m|[m [35m|[m[34m/[m  
+[1;31m|[m [34m|[m[34m/[m[35m|[m   
+[1;31m|[m * [35m|[m [33mf180de7[m[33m ([m[1;31morigin/feature/holiday-requests[m[33m)[m Add holiday request functionality
+[1;31m|[m [35m|[m[35m/[m  
+[1;31m|[m * [33m0b2a31c[m fix: typos
+[1;31m|[m * [33mabbb908[m fix: return List<UserDto> instead of List<User> in GetUsers()
